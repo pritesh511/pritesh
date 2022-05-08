@@ -12,13 +12,13 @@ const Input = () => {
   ];
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [gender, setGender] = useState("male");
+  const [gender, setGender] = useState("");
 
   const handleForm = (e) => {
     e.preventDefault();
     setFirstName("");
     setLastName("");
-    setGender("male");
+    setGender("");
   };
 
   return (
@@ -27,6 +27,7 @@ const Input = () => {
         <FormBlock>
           <Form onSubmit={handleForm}>
             <InputName
+              required
               placeholder="FirstName"
               value={firstName}
               onChange={(e) => {
@@ -41,7 +42,7 @@ const Input = () => {
               }}
             ></InputName>
             <Select
-              defaultValue={gender}
+              value={gender}
               onChange={(e) => {
                 setGender(e.value);
               }}
