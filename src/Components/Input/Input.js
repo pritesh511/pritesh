@@ -17,6 +17,9 @@ const Input = () => {
   const handleForm = (e) => {
     e.preventDefault();
     dispatch(addItem(firstName, lastName, gender));
+    setFirstName("");
+    setLastName("");
+    setGender("male");
   };
 
   return (
