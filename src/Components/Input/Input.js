@@ -16,7 +16,6 @@ const Input = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    dispatch(addItem(firstName, lastName, gender));
     setFirstName("");
     setLastName("");
     setGender("male");
@@ -48,7 +47,14 @@ const Input = () => {
               }}
               options={selectedOption}
             />
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+              onClick={() => {
+                dispatch(addItem(firstName, lastName, gender));
+              }}
+            >
+              Submit
+            </Button>
           </Form>
         </FormBlock>
       </FormContainer>

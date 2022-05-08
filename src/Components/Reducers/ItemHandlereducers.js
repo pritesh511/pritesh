@@ -1,13 +1,12 @@
-const InitialState = [];
+const InitialState = { data: [] };
 
 const ItemHandelReducers = (state = InitialState, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       const { id, firstName, lastName, gender } = action.payload;
-      console.log(id, firstName, firstName, gender);
-      console.log(state?.data);
       return {
-        state: [
+        data: [
+          ...state.data,
           {
             id: id,
             firstName: firstName,
@@ -16,10 +15,15 @@ const ItemHandelReducers = (state = InitialState, action) => {
           },
         ],
       };
-    default:
+    case "REMOVE_ITEM":
+      const newData = state.data.filter(
+        (item) => item.id !== action.payload.id
+      );
       return {
-        state,
+        data: newData,
       };
+    default:
+      return state;
   }
 };
 

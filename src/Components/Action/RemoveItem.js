@@ -1,9 +1,8 @@
-export const RemoveItem = (name) => {
+export const RemoveItem = (id) => {
   return {
     type: "REMOVE_ITEM",
     payload: {
       id: id,
-      name: name,
     },
   };
 };

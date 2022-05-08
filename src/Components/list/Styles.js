@@ -11,6 +11,7 @@ const ListIem = styled.div`
   padding: 12px;
   border-radius: 6px;
   border: 1px solid #e4e4e5;
+  margin: 0 0 10px 0;
 `;
 const Name = styled.div``;
 const FirstName = styled.span`
